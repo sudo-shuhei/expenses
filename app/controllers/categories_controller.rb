@@ -26,7 +26,7 @@ class CategoriesController < ApplicationController
   def update
     @category = Category.find_by(id: params[:id])
     category_name = params[:name]
-    @items = Item.find_by(category: category_name)
+    @items = Item.find_by(category: @category.id)
     puts @items
     if @category.update(name: category_name) and @items.update(category: category_name)
       flash[:notice] = "編集しました"

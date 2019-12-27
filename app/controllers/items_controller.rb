@@ -5,6 +5,7 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find_by(id: params[:id])
+    @category = Category.find_by(id: @item.category)
   end
 
   def new
@@ -12,7 +13,7 @@ class ItemsController < ApplicationController
     categories = Category.all
     @category_hash = {}
     for cate in categories do
-      @category_hash[cate.name] = cate.name
+      @category_hash[cate.name] = cate.id
     end
     # puts @category_hash
   end
@@ -35,6 +36,11 @@ class ItemsController < ApplicationController
 
   def edit
     @item = Item.find_by(id: params[:id])
+    categories = Category.all
+    @category_hash = {}
+    for cate in categories do
+      @category_hash[cate.name] = cate.id
+    end
   end
 
   def update

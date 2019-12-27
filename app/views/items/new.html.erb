@@ -9,7 +9,6 @@
   <%= form.number_field :price, value: @item.price %>
   <p>カテゴリ</p>
   <%= form.select :category, @category_hash, :selected => @item.category %>
-
   <p>日付</p>
   <%= form.date_select :date, value: @item.date %>
   <p>メモ</p>
