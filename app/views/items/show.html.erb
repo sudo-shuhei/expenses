@@ -1,0 +1,10 @@
+<h1>Items#show</h1>
+<p>Find me in app/views/items/show.html.erb</p>
+
+<%= @item.price %>
+<%= @item.category %>
+<%= @item.date %>
+<%= @item.memo %>
+
+<%= link_to "修正","/items/edit/#{@item.id}" %>
+<%= link_to "削除","/items/#{@item.id}", method: :delete %>

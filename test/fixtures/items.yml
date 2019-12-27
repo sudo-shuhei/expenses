@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  price: 1
+  category: MyString
+  memo: MyString
+  date: 2019-12-26
+
+two:
+  price: 1
+  category: MyString
+  memo: MyString
+  date: 2019-12-26

@@ -1,0 +1,12 @@
+<h1>Items#index</h1>
+<p>Find me in app/views/items/index.html.erb</p>
+
+<% @items.each do |item| %>
+  <%= link_to "/items/#{item.id}" do %>
+    <%= item.price %>
+    <%= item.memo %>
+    <br>
+  <% end %>
+<% end %>
+
+<%= link_to "記録", "/items/new" %>

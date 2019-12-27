@@ -1,0 +1,17 @@
+<h1>Items#new</h1>
+<p>Find me in app/views/items/new.html.erb</p>
+
+<%= form_with url:"/items/create", local: true do |form| %>
+  <% @item.errors.full_messages.each do |message| %>
+    <%= message %>
+  <% end %>
+  <p>値段</p>
+  <%= form.number_field :price, value: @item.price %>
+  <p>カテゴリ</p>
+  <%= form.text_field :category, value: @item.category %>
+  <p>日付</p>
+  <%= form.date_select :date, value: @item.date %>
+  <p>メモ</p>
+  <%= form.text_area :memo, value: @item.memo %>
+  <%= form.submit "登録"%>
+<% end %>
