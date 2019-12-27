@@ -4,3 +4,13 @@
 <p>使った金額</p>
 <p>今月</p>
 <%= @cost_month %>
+
+<p>分析</p>
+<%= pie_chart @chart %>
+
+<p>詳細</p>
+<% @chart.each do |category, cost| %>
+  <%= category%>
+  <%= cost %>
+  <br>
+<% end %>

@@ -7,9 +7,18 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
   </head>
 
   <body>
+    <header>
+      <h1><%= link_to "家計簿アプリ", "/" %></h1>
+      <ul>
+        <li><%= link_to "履歴", "/items/index" %></li>
+        <li><%= link_to "記録", "/items/new" %></li>
+       </ul>
+
+    </header>
     <%= flash[:notice] %>
     <%= yield %>
   </body>
