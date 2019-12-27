@@ -9,6 +9,12 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
+    categories = Category.all
+    @category_hash = {}
+    for cate in categories do
+      @category_hash[cate.name] = cate.name
+    end
+    # puts @category_hash
   end
 
   def create

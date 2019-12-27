@@ -1,0 +1,10 @@
+<p>カテゴリ編集画面</p>
+
+<%= form_with url: "/categories/update/#{@category.id}" do |form| %>
+  <% @category.errors.full_messages.each do |message| %>
+    <%= message %>
+  <% end %>
+  <p>名前</p>
+  <%= form.text_field :name, value: @category.name %>
+  <%= form.submit "保存"%>
+<% end %>

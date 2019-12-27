@@ -1,0 +1,11 @@
+<h1>Categories#new</h1>
+<p>Find me in app/views/categories/new.html.erb</p>
+
+<%= form_with url:"/categories/create", local:true do |form| %>
+  <% @category.errors.full_messages.each do |message| %>
+    <%= message %>
+  <% end %>
+  <p>名前</p>
+  <%= form.text_field :name, value: @category.name %>
+  <%= form.submit "追加"%>
+<% end %>

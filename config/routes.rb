@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'categories/index'
+  get 'categories/new'
+  post 'categories/create'
+  get 'categories/edit/:id' => 'categories#edit'
+  post 'categories/update/:id' => 'categories#update'
+  delete 'categories/:id' => 'categories#destroy'
   get 'items/index'
   get 'items/new'
   get 'items/:id' => 'items#show'
