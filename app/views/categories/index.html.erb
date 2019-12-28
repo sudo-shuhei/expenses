@@ -3,8 +3,10 @@
 
 <% @categories.each do |category| %>
     <%= category.name %>
-    <%= link_to "編集", "/categories/edit/#{category.id}" %>
-    <%= link_to "削除", "/categories/#{category.id}", method: :delete %>
+    <% if category.id > 16 %>
+      <%= link_to "編集", "/categories/edit/#{category.id}" %>
+      <%= link_to "削除", "/categories/#{category.id}", method: :delete %>
+    <% end %>
     <br>
 <% end %>
 

@@ -59,4 +59,8 @@ class ItemsController < ApplicationController
     flash[:notice] = "削除しました"
     redirect_to("/items/index")
   end
+
+  def calendar
+    @items = Item.all
+  end
 end

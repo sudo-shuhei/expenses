@@ -1,0 +1,11 @@
+<h1>カレンダー</h1>
+
+<%= month_calendar(attribute: :date, events: @items) do |date, items| %>
+    <%= date %>
+    <% items.each do |item| %>
+      <div>
+        <%= item.memo %>
+        <%= item.price %>
+      </div>
+    <% end %>
+  <% end %>

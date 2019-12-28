@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   delete 'categories/:id' => 'categories#destroy'
   get 'items/index'
   get 'items/new'
+  get 'items/calendar'
   get 'items/:id' => 'items#show'
   root "home#top"
   post 'items/create'
