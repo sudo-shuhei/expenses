@@ -1,4 +1,4 @@
-<p>カテゴリ編集画面</p>
+<h2>カテゴリ編集</h2>
 
 <%= form_with url: "/categories/update/#{@category.id}" do |form| %>
   <% @category.errors.full_messages.each do |message| %>

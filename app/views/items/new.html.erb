@@ -1,10 +1,16 @@
 <h2>記録</h2>
+<br>
+<button type="button" class="btn btn-outline-dark " data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    電卓
+</button>
+<br>
 
-<div class = "">
-  <div class ="py-1">
-    <input type="text" id="result" style = "width:100px;height:30px">
-    <input type="button" value="C" onclick="reset()" style ="width:30px;heigt:40px">
-  </div>
+<div class = "collapse" id = "collapseExample">
+  <div class = "m-3">
+    <div class ="py-1">
+      <input type="text" id="result" style = "width:100px;height:30px">
+      <input type="button" value="C" onclick="reset()" style ="width:30px;heigt:40px">
+    </div>
     <div >
       <input type="button" value="1" onclick="edit(this)" style ="width:30px;height:30px">
       <input type="button" value="2" onclick="edit(this)" style ="width:30px;height:30px">
@@ -41,20 +47,21 @@
         result.value = ""
       }
     </script>
+  </div>
 </div>
 
-
+<br>
 <%= form_with url:"/items/create", local: true do |form| %>
   <% @item.errors.full_messages.each do |message| %>
     <%= message %>
   <% end %>
-  <p>値段</p>
+  <div>値段</div>
   <%= form.number_field :price, value: @item.price %>
-  <p>カテゴリ</p>
+  <div>カテゴリ</div>
   <%= form.select :category, @category_hash, :selected => @item.category %>
-  <p>日付</p>
+  <div>日付</div>
   <%= form.date_select :date, value: @item.date %>
-  <p>メモ</p>
+  <div>メモ</div>
   <%= form.text_area :memo, value: @item.memo %>
   <%= form.submit "登録"%>
 <% end %>

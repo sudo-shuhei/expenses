@@ -1,13 +1,13 @@
-<h1>Categories#index</h1>
-<p>Find me in app/views/categories/index.html.erb</p>
-
+<h2>カテゴリ一覧</h2>
+<br>
 <% @categories.each do |category| %>
+  <div class="p-1">
     <%= category.name %>
     <% if category.id > 16 %>
       <%= link_to "編集", "/categories/edit/#{category.id}" %>
       <%= link_to "削除", "/categories/#{category.id}", method: :delete %>
     <% end %>
-    <br>
+  </div>
 <% end %>
 
 <%= link_to "追加", "/categories/new" %>

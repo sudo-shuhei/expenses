@@ -4,8 +4,12 @@
     <%= date %>
     <% items.each do |item| %>
       <div>
-        <%= item.memo %>
-        <%= item.price %>
+        <%= link_to "/items/#{item.id}", class: "text-dark" do %>
+          <%= item.memo %>
+          <br>
+          ¥<%= item.price %>
+          <br>
+        <% end %>
       </div>
     <% end %>
   <% end %>

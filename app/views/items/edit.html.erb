@@ -1,17 +1,16 @@
-<h1>Items#edit</h1>
-<p>Find me in app/views/items/edit.html.erb</p>
+<h2>修正</h2>
 
 <%= form_with url:"/items/update/#{@item.id}", local: true do |form| %>
   <% @item.errors.full_messages.each do |message| %>
     <%= message %>
   <% end %>
-  <p>値段</p>
+  <div>値段</div>
   <%= form.number_field :price, value: @item.price %>
-  <p>カテゴリ</p>
+  <div>カテゴリ</div>
   <%= form.select :category, @category_hash, :selected => @item.category %>
-  <p>日付</p>
+  <div>日付</div>
   <%= form.date_select :date, value: @item.date %>
-  <p>メモ</p>
+  <div>メモ</div>
   <%= form.text_area :memo, value: @item.memo %>
   <%= form.submit "登録"%>
 <% end %>
