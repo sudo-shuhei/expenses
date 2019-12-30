@@ -1,6 +1,46 @@
 <h1>Items#new</h1>
 <p>Find me in app/views/items/new.html.erb</p>
 
+<input type="text" id="result">
+<input type="button" value="AC" onclick="reset()">
+  <div>
+    <input type="button" value="1" onclick="edit(this)">
+    <input type="button" value="2" onclick="edit(this)">
+    <input type="button" value="3" onclick="edit(this)">
+    <input type="button" value="+" onclick="edit(this)">
+  </div>
+  <div>
+    <input type="button" value="4" onclick="edit(this)">
+    <input type="button" value="5" onclick="edit(this)">
+    <input type="button" value="6" onclick="edit(this)">
+    <input type="button" value="-" onclick="edit(this)">
+  </div>
+  <div>
+    <input type="button" value="7" onclick="edit(this)">
+    <input type="button" value="8" onclick="edit(this)">
+    <input type="button" value="9" onclick="edit(this)">
+    <input type="button" value="/" onclick="edit(this)">
+  </div>
+  <div>
+    <input type="button" value="0" onclick="edit(this)">
+    <input type="button" value="." onclick="edit(this)">
+    <input type="button" value="*" onclick="edit(this)">
+    <input type="button" value="=" onclick="calc()">
+  </div>
+  <script language="javascript" type="text/javascript">
+    var result = document.getElementById("result");
+    function edit(elem) {
+      result.value = result.value + elem.value;
+    }
+    function calc() {
+      result.value = new Function("return " + result.value)();
+    }
+    function reset(){
+      result.value = ""
+    }
+  </script>
+
+
 <%= form_with url:"/items/create", local: true do |form| %>
   <% @item.errors.full_messages.each do |message| %>
     <%= message %>
@@ -17,3 +57,4 @@
 <% end %>
 
 <%= link_to "カテゴリ設定", "/categories/index" %>
+<br>
