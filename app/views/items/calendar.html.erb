@@ -5,9 +5,10 @@
     <% items.each do |item| %>
       <div>
         <%= link_to "/items/#{item.id}", class: "text-dark" do %>
-          <%= item.memo %>
-          <br>
-          ¥<%= item.price %>
+          <div class ="border border-info rounded p-1">
+            <%= item.memo %>
+            ¥<%= item.price %>
+          </div>
           <br>
         <% end %>
       </div>
