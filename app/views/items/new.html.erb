@@ -1,44 +1,47 @@
-<h1>Items#new</h1>
-<p>Find me in app/views/items/new.html.erb</p>
+<h2>記録</h2>
 
-<input type="text" id="result">
-<input type="button" value="AC" onclick="reset()">
-  <div>
-    <input type="button" value="1" onclick="edit(this)">
-    <input type="button" value="2" onclick="edit(this)">
-    <input type="button" value="3" onclick="edit(this)">
-    <input type="button" value="+" onclick="edit(this)">
+<div class = "">
+  <div class ="py-1">
+    <input type="text" id="result" style = "width:100px;height:30px">
+    <input type="button" value="C" onclick="reset()" style ="width:30px;heigt:40px">
   </div>
-  <div>
-    <input type="button" value="4" onclick="edit(this)">
-    <input type="button" value="5" onclick="edit(this)">
-    <input type="button" value="6" onclick="edit(this)">
-    <input type="button" value="-" onclick="edit(this)">
-  </div>
-  <div>
-    <input type="button" value="7" onclick="edit(this)">
-    <input type="button" value="8" onclick="edit(this)">
-    <input type="button" value="9" onclick="edit(this)">
-    <input type="button" value="/" onclick="edit(this)">
-  </div>
-  <div>
-    <input type="button" value="0" onclick="edit(this)">
-    <input type="button" value="." onclick="edit(this)">
-    <input type="button" value="*" onclick="edit(this)">
-    <input type="button" value="=" onclick="calc()">
-  </div>
-  <script language="javascript" type="text/javascript">
-    var result = document.getElementById("result");
-    function edit(elem) {
-      result.value = result.value + elem.value;
-    }
-    function calc() {
-      result.value = new Function("return " + result.value)();
-    }
-    function reset(){
-      result.value = ""
-    }
-  </script>
+    <div >
+      <input type="button" value="1" onclick="edit(this)" style ="width:30px;height:30px">
+      <input type="button" value="2" onclick="edit(this)" style ="width:30px;height:30px">
+      <input type="button" value="3" onclick="edit(this)" style ="width:30px;height:30px">
+      <input type="button" value="+" onclick="edit(this)" style ="width:30px;height:30px">
+    </div>
+    <div class="">
+      <input type="button" value="4" onclick="edit(this)" style ="width:30px;height:30px">
+      <input type="button" value="5" onclick="edit(this)" style ="width:30px;height:30px">
+      <input type="button" value="6" onclick="edit(this)" style ="width:30px;height:30px">
+      <input type="button" value="-" onclick="edit(this)" style ="width:30px;height:30px">
+    </div>
+    <div class = "">
+      <input type="button" value="7" onclick="edit(this)" style ="width:30px;height:30px">
+      <input type="button" value="8" onclick="edit(this)" style ="width:30px;height:30px">
+      <input type="button" value="9" onclick="edit(this)" style ="width:30px;height:30px">
+      <input type="button" value="/" onclick="edit(this)" style ="width:30px;height:30px">
+    </div>
+    <div class = "">
+      <input type="button" value="0" onclick="edit(this)" style ="width:30px;height:30px">
+      <input type="button" value="." onclick="edit(this)" style ="width:30px;height:30px">
+      <input type="button" value="*" onclick="edit(this)" style ="width:30px;height:30px">
+      <input type="button" value="=" onclick="edit(this)" style ="width:30px;height:30px">
+    </div>
+    <script language="javascript" type="text/javascript">
+      var result = document.getElementById("result");
+      function edit(elem) {
+        result.value = result.value + elem.value;
+      }
+      function calc() {
+        result.value = new Function("return " + result.value)();
+      }
+      function reset(){
+        result.value = ""
+      }
+    </script>
+</div>
 
 
 <%= form_with url:"/items/create", local: true do |form| %>

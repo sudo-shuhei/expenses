@@ -1,14 +1,15 @@
-<h1>Home#top</h1>
-<p>Find me in app/views/home/top.html.erb</p>
+<h3>使った金額</h3>
+<div class = "mx-5">今月</div>
+<div class = "mx-5 mb-5">
+  <%= @cost_month %>
+</div>
 
-<p>使った金額</p>
-<p>今月</p>
-<%= @cost_month %>
+<h3>分析</h3>
+<div>
+  <%= pie_chart @chart %>
+</div>
 
-<p>分析</p>
-<%= pie_chart @chart %>
-
-<p>詳細</p>
+<h4>詳細</h4>
 <% @chart.each do |category, cost| %>
   <%= category%>
   <%= cost %>

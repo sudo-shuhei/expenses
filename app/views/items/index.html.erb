@@ -1,12 +1,12 @@
-<h1>Items#index</h1>
-<p>Find me in app/views/items/index.html.erb</p>
-
+<h2>支出履歴</h2>
 <% @items.each do |item| %>
-  <%= link_to "/items/#{item.id}" do %>
-    <%= item.price %>
-    <%= item.memo %>
-    <br>
-  <% end %>
+  <div class ="p-2 m-1 border text-dark">
+    <%= link_to "/items/#{item.id}", class: "text-dark" do %>
+      <%= item.memo %>
+      <br>
+      ¥<%= item.price %>
+      <br>
+    <% end %>
+  </div>
 <% end %>
-
-<%= link_to "記録", "/items/new" %>
+<br>

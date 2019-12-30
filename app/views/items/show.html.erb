@@ -1,10 +1,11 @@
-<h1>Items#show</h1>
-<p>Find me in app/views/items/show.html.erb</p>
-
-<%= @item.price %>
-<%= @category.name %>
-<%= @item.date %>
-<%= @item.memo %>
-
-<%= link_to "修正","/items/edit/#{@item.id}" %>
-<%= link_to "削除","/items/#{@item.id}", method: :delete %>
+<h2>詳細</h2>
+<div class="my-2 p-2 border">
+  日付;<%= @item.date %><br>
+  <%= @category.name %><br>
+  ¥<%= @item.price %><br>
+  メモ；<%= @item.memo %>
+</div>
+<div class = "m-2">
+  <%= link_to "修正","/items/edit/#{@item.id}" ,class: "btn btn-outline-dark p-1 m-1 text-dark" %>
+  <%= link_to "削除","/items/#{@item.id}", method: :delete, class: "btn btn-outline-dark p-1 m-1 text-dark" %>
+</div>
