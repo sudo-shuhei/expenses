@@ -39,6 +39,9 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'chartkick'
 
 gem 'simple_calendar', '~> 2.0'
+#bootstrap
+gem 'bootstrap'
+gem 'jquery-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
